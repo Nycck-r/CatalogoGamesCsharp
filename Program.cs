@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using CatalogoJogosAPI.Data;
+using CatalogoJogosAPI.Repositorios;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<CatalogoContext>(options =>
     options.UseSqlite("Data Source=catalogo.db"));
+builder.Services.AddScoped<IJogoRepositorio, JogoRepositorio>();
 
 // Add services to the container.
 
