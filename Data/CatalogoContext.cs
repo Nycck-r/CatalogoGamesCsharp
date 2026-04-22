@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using CatalogoJogosAPI.Modelos;
+using CatalogoJogosAPI.Models;
 
 namespace CatalogoJogosAPI.Data
 {

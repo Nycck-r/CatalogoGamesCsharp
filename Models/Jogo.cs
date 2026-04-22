@@ -1,4 +1,4 @@
-﻿namespace CatalogoJogosAPI.Modelos
+﻿namespace CatalogoJogosAPI.Models
 {
     public class Jogo
     {

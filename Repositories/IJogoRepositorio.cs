@@ -1,6 +1,6 @@
-﻿using CatalogoJogosAPI.Modelos;
+﻿using CatalogoJogosAPI.Models;
 
-namespace CatalogoJogosAPI.Repositorios
+namespace CatalogoJogosAPI.Repositories
 {
     public interface IJogoRepositorio
     {

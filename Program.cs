@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using CatalogoJogosAPI.Data;
-using CatalogoJogosAPI.Repositorios;
+using CatalogoJogosAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

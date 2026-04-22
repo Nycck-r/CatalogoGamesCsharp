@@ -1,9 +1,8 @@
-﻿using CatalogoJogosAPI.Dados;
-using CatalogoJogosAPI.Data;
-using CatalogoJogosAPI.Modelos;
+﻿using CatalogoJogosAPI.Data;
+using CatalogoJogosAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CatalogoJogosAPI.Repositorios
+namespace CatalogoJogosAPI.Repositories
 {
     public class JogoRepositorio : IJogoRepositorio
     {
