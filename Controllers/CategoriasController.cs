@@ -33,11 +33,9 @@ namespace CatalogoJogosAPI.Controllers
         [HttpPost]
         public IActionResult Criar(Categoria categoria)
         {
-            
             if (string.IsNullOrWhiteSpace(categoria.Nome) || categoria.Nome.Length < 3)
                 return BadRequest("O nome da categoria é obrigatório e deve ter no mínimo 3 caracteres.");
 
-            
             if (_repositorio.ObterPorNome(categoria.Nome) != null)
                 return BadRequest("Já existe uma categoria cadastrada com este nome.");
 
@@ -56,7 +54,10 @@ namespace CatalogoJogosAPI.Controllers
             if (string.IsNullOrWhiteSpace(categoriaAtualizada.Nome) || categoriaAtualizada.Nome.Length < 3)
                 return BadRequest("O nome da categoria é obrigatório e deve ter no mínimo 3 caracteres.");
 
-            _repositorio.Atualizar(categoriaAtualizada);
+            
+            categoriaExistente.Nome = categoriaAtualizada.Nome;
+
+            _repositorio.Atualizar(categoriaExistente);
             return NoContent();
         }
 
@@ -66,7 +67,6 @@ namespace CatalogoJogosAPI.Controllers
             var categoria = _repositorio.ObterPorId(id);
             if (categoria == null) return NotFound("Categoria não encontrada.");
 
-            
             if (categoria.Jogos.Any())
                 return BadRequest("Não é possível excluir esta categoria pois existem jogos vinculados a ela.");
 
