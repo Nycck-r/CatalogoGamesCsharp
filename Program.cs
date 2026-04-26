@@ -1,6 +1,6 @@
 using CatalogoJogosAPI.Data;
 using CatalogoJogosAPI.Repositories;
-using CatalogoJogosAPI.Repositorios;
+using CatalogoJogosAPI.Repositorios; 
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -9,13 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
+    
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+
+    
+    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
 });
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configuração do Banco de Dados
+
 builder.Services.AddDbContext<CatalogoContext>(options =>
     options.UseSqlite("Data Source=catalogo.db"));
 
