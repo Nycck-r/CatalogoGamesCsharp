@@ -1,10 +1,12 @@
 ﻿using CatalogoJogosAPI.Models;
 using CatalogoJogosAPI.Models;
 using CatalogoJogosAPI.Repositorios;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatalogoJogosAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriasController : ControllerBase
